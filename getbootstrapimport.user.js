@@ -31,8 +31,11 @@ function setvalues() {
           alert("Really got a line " + line);
           if(line.substr(0, 1) == "@") {
             // We are actually parsing a variable.
-            var m = line.match(/@([\w-]+):\s*(value)/);
-            alert(m[0] + " set value to " + m[1]);
+            var re = /(@[\w-]+):\s*(.*);/;
+            if(line.test(re) == true) {
+              var m = line.match(re);
+              alert(m[0] + " set value to " + m[1]);
+            }
           }
         }
       }
