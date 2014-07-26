@@ -8,8 +8,7 @@
 //   * is a wildcard character
 //   .tld is magic that matches all top-level domains (e.g. .com, .co.uk, .us, etc.)
 
-GM_registerMenuCommand( "Set values for Bootstrap", setvalues );
-
+function setvalues() {
 var testfile = prompt("Please enter the path to your less variables data", "http://github.com/Arven/arven-design/testfile.less");
 if (testfile != null) {
 
@@ -38,3 +37,6 @@ if (testfile != null) {
   });
 
 }
+}
+
+GM_registerMenuCommand( "Set values for Bootstrap", setvalues );
