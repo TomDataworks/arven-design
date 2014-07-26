@@ -11,7 +11,7 @@
 function setvalues() {
   var testfile = prompt("Please enter the path to your less variables data", "http://github.com/Arven/arven-design/testfile.less");
   if (testfile != null) {
-  
+    alert("Actually trying");
     // Create a request, asking the server for a JSON response via the Accept header
     // Also logging whenever the state of the request changes
     var ret = GM_xmlhttpRequest({
@@ -24,9 +24,11 @@ function setvalues() {
       onload: function(res) {
         // Lets assume we get Text back...
         var text = res.responseText;
+        alert("Really loaded");
         lines = text.split("\n");
         for(var i = 0; i < lines.length; i++) {
           var line = lines[i];
+          alert("Really got a line " + line);
           if(line.substr(0, 1) == "@") {
             // We are actually parsing a variable.
             var m = line.match(/@([\w-]+):\s*(value)/);
