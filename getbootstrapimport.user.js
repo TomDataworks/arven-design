@@ -3,7 +3,6 @@
 // @namespace     http://github.com/Arven/arven-design
 // @description	  Imports a style to Bootstrap Customizer at getbootstrap.com
 // @include       http://getbootstrap.com/customize/*
-// @require       http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
 // ==/UserScript==
 // Notes:
 //   * is a wildcard character
@@ -32,8 +31,7 @@ function setvalues() {
             var re = /(@[\w-]+):\s*(.*);/;
             if(re.test(line) == true) {
               var m = line.match(re);
-              // Strange crash bug...
-              $("[data-var='"+m[1]+"']").value(m[2]);
+              document.getElementById("input-@"+m[1]).value = m[2];
             }
           }
         }
