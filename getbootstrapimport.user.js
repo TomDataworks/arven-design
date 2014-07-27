@@ -32,6 +32,7 @@ function setvalues() {
             var re = /(@[\w-]+):\s*(.*);/;
             if(re.test(line) == true) {
               var m = line.match(re);
+              // Strange crash bug...
               $("[data-var='"+m[1]+"']").value(m[2]);
             }
           }
