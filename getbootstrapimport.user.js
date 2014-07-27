@@ -3,15 +3,15 @@
 // @namespace     http://github.com/Arven/arven-design
 // @description	  Imports a style to Bootstrap Customizer at getbootstrap.com
 // @include       http://getbootstrap.com/customize/*
+// @require       http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.js
 // ==/UserScript==
 // Notes:
 //   * is a wildcard character
 //   .tld is magic that matches all top-level domains (e.g. .com, .co.uk, .us, etc.)
 
 function setvalues() {
-  var testfile = prompt("Please enter the path to your less variables data", "http://github.com/Arven/arven-design/testfile.less");
+  var testfile = prompt("Please enter the path to your less variables data" ,"http://github.com/Arven/arven-design/testfile.less");
   if (testfile != null) {
-    alert("Actually trying");
     // Create a request, asking the server for a JSON response via the Accept header
     // Also logging whenever the state of the request changes
     var ret = GM_xmlhttpRequest({
@@ -24,17 +24,15 @@ function setvalues() {
       onload: function(res) {
         // Lets assume we get Text back...
         var text = res.responseText;
-        alert("Really loaded");
         lines = text.split("\n");
         for(var i = 0; i < lines.length; i++) {
           var line = lines[i];
-          alert("Really got a line " + line);
           if(line.substr(0, 1) == "@") {
             // We are actually parsing a variable.
             var re = /(@[\w-]+):\s*(.*);/;
             if(re.test(line) == true) {
               var m = line.match(re);
-              alert(m[0] + " set value to " + m[1]);
+              $("[data-var='"+m[1]+"']").value(m[2]);
             }
           }
         }
