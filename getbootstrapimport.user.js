@@ -26,11 +26,13 @@ function setvalues() {
         lines = text.split("\n");
         for(var i = 0; i < lines.length; i++) {
           var line = lines[i];
+          alert(line);
           if(line.substr(0, 1) == "@") {
             // We are actually parsing a variable.
             var re = /(@[\w-]+):\s*(.*);/;
             if(re.test(line) == true) {
               var m = line.match(re);
+              alert(m[1]+"="+m[2]);
               //alert("input-@" + m[1] + "=" + m[2]);
               var el = document.getElementById("input-"+m[1]);
               if(el != null) {
