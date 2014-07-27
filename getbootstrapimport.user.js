@@ -32,7 +32,10 @@ function setvalues() {
             if(re.test(line) == true) {
               var m = line.match(re);
               //alert("input-@" + m[1] + "=" + m[2]);
-              document.getElementById("input-"+m[1]).value = m[2];
+              var el = document.getElementById("input-"+m[1]);
+              if(el != null) {
+                el.value = m[2];
+              }
             }
           }
         }
