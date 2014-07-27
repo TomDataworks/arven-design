@@ -34,6 +34,7 @@ function setvalues() {
               //alert("input-@" + m[1] + "=" + m[2]);
               var el = document.getElementById("input-"+m[1]);
               if(el != null) {
+                alert(m[1]+"="+m[2]);
                 el.value = m[2];
               }
             }
