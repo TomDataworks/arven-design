@@ -32,7 +32,7 @@ function setvalues() {
           if(line.substr(0, 1) == "@") {
             // We are actually parsing a variable.
             var re = /(@[\w-]+):\s*(.*);/;
-            if(line.test(re) == true) {
+            if(re.test(line) == true) {
               var m = line.match(re);
               alert(m[0] + " set value to " + m[1]);
             }
