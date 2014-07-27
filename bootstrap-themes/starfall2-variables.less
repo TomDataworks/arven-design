@@ -134,11 +134,11 @@
 @table-condensed-cell-padding:  5px;
 
 //** Default background color used for all tables.
-@table-bg:                      transparent;
+@table-bg:                      @well-bg;
 //** Background color used for `.table-striped`.
-@table-bg-accent:               #f9f9f9;
+@table-bg-accent:               darken(@well-bg, 10%);
 //** Background color used for `.table-hover`.
-@table-bg-hover:                #f5f5f5;
+@table-bg-hover:                darken(@well-bg, 15%);
 @table-bg-active:               @table-bg-hover;
 
 //** Border color for table and cell borders.
@@ -486,19 +486,19 @@
 //## Define colors for form feedback states and, by default, alerts.
 
 @state-success-text:             #3c763d;
-@state-success-bg:               #dff0d8;
+@state-success-bg:               darken(#dff0d8, 70%);
 @state-success-border:           darken(spin(@state-success-bg, -10), 5%);
 
 @state-info-text:                #31708f;
-@state-info-bg:                  #d9edf7;
+@state-info-bg:                  darken(#d9edf7, 70%);
 @state-info-border:              darken(spin(@state-info-bg, -10), 7%);
 
 @state-warning-text:             #8a6d3b;
-@state-warning-bg:               #fcf8e3;
+@state-warning-bg:               darken(#fcf8e3, 70%);
 @state-warning-border:           darken(spin(@state-warning-bg, -10), 5%);
 
 @state-danger-text:              #a94442;
-@state-danger-bg:                #f2dede;
+@state-danger-bg:                darken(#f2dede, 70%);
 @state-danger-border:            darken(spin(@state-danger-bg, -10), 5%);
 
 
@@ -689,15 +689,15 @@
 //
 //##
 
-@panel-bg:                    #fff;
+@panel-bg:                    @well-bg;
 @panel-body-padding:          15px;
 @panel-heading-padding:       10px 15px;
 @panel-footer-padding:        @panel-heading-padding;
 @panel-border-radius:         @border-radius-base;
 
 //** Border color for elements within panels
-@panel-inner-border:          #ddd;
-@panel-footer-bg:             #f5f5f5;
+@panel-inner-border:          @brand-primary;
+@panel-footer-bg:             @brand-primary;
 
 @panel-default-text:          @gray-dark;
 @panel-default-border:        #ddd;
