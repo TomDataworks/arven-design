@@ -31,8 +31,8 @@ function setvalues() {
             var re = /(@[\w-]+):\s*(.*);/;
             if(re.test(line) == true) {
               var m = line.match(re);
-              alert("input-@" + m[1] + "=" + m[2]);
-              document.getElementById("input-@"+m[1]).value = m[2];
+              //alert("input-@" + m[1] + "=" + m[2]);
+              document.getElementById("input-"+m[1]).value = m[2];
             }
           }
         }
