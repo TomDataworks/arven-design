@@ -3,7 +3,7 @@
 // @namespace     http://github.com/Arven/arven-design
 // @description	  Imports a style to Bootstrap Customizer at getbootstrap.com
 // @include       http://getbootstrap.com/customize/*
-// @require       http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.js
+// @require       http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
 // ==/UserScript==
 // Notes:
 //   * is a wildcard character
