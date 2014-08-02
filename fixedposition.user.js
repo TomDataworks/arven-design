@@ -10,7 +10,7 @@
 
 var myNodeList = document.querySelectorAll("div")
 for (var i = 0; i < myNodeList.length; ++i) {
-  var item = myNodeList[i];  // Calling myNodeList.item(i) isn't necessary in JavaScript
+  var el = myNodeList[i];  // Calling myNodeList.item(i) isn't necessary in JavaScript
   if(window.getComputedStyle(el).position === 'fixed') {
       el.style.position = 'static';
   }
