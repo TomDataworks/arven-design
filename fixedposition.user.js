@@ -2,7 +2,7 @@
 // @name          FixedPositionToStatic
 // @namespace     http://github.com/Arven/arven-design
 // @description	  Converts fixed positioned elements to static
-// @include       http://*.tld/*
+// @include       *://*/*
 // ==/UserScript==
 // Notes:
 //   * is a wildcard character
